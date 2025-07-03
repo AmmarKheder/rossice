@@ -1,50 +1,75 @@
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/1785175/215624212-fc92ccb1-f14c-4cb6-982f-61f50b9f3c21.png" width="320px">
+  <img src="logo.png" width="300px">
 </p>
 
-[![Documentation](https://img.shields.io/badge/docs-passing-brightgreen)](https://microsoft.github.io/ClimaX)
-[![Paper](https://img.shields.io/badge/arXiv-2301.10343-blue)](https://arxiv.org/abs/2301.10343)
+[![Documentation](https://img.shields.io/badge/docs-in%20progress-yellow)](#)
+[![Previous Work](https://img.shields.io/badge/arXiv-2502.11941-blue)](https://arxiv.org/abs/2502.11941)
 
-This repository contains code accompanying the paper [**ClimaX: A foundation model for weather and climate**](https://arxiv.org/abs/2301.10343).
+# Rossice: Fine-tuning ClimaX for High-Resolution Air Pollution Reanalysis
 
-For details about usage please see [documentation](https://microsoft.github.io/ClimaX).
-If you have any questions or suggestions please open a [discussion](https://github.com/microsoft/ClimaX/discussions). If you notice a bug, please open an [issue](https://github.com/microsoft/ClimaX/issues).
+**Rossice** is a customized fork of [ClimaX](https://arxiv.org/abs/2301.10343), designed to integrate and fine-tune foundation weather models on high-resolution air pollution reanalysis data from the [CAQRA](https://www.scidb.cn/en/detail?dataSetId=696756084735475712) dataset (China Air Quality Reanalysis).  
+This project aims to adapt ClimaX to pollution-specific variables such as **PM₂.₅**, **O₃**, **NO₂**, and more, using a spatial resolution of **0.1° (~10 km)**.
 
-## Citation
+---
 
-If you find this repository useful in your research, please consider citing the following papers:
+## 🎯 Project Objective
 
-```bibtex
-@article{nguyen2023climax,
-  title={ClimaX: A foundation model for weather and climate},
-  author={Nguyen, Tung and Brandstetter, Johannes and Kapoor, Ashish and Gupta, Jayesh K and Grover, Aditya},
-  journal={arXiv preprint arXiv:2301.10343},
-  year={2023}
-}
-```
+> *Fine-tune a general-purpose climate model (ClimaX) on high-resolution atmospheric pollutant fields over China using CAQRA, with a focus on prediction and representation of urban-scale pollution dynamics.*
 
-## Acknowledgements
+Goals:
+- Evaluate the adaptability of ClimaX on environmental pollutant data
+- Incorporate pollutant-specific variables as model targets (e.g. PM₂.₅, NO₂, O₃)
+- Enable training on finer spatial resolutions (0.1°) not originally used in ClimaX
 
-Thanks to [@rems75](https://github.com/rems75) and [@kdatta](https://github.com/kdatta) for noticing a performance bug with variable id transfer to GPUs.
+---
 
-## Contributing
+## 📝 Reference
 
-This project welcomes contributions and suggestions.  Most contributions require you to agree to a
-Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
-the rights to use your contribution. For details, visit https://cla.opensource.microsoft.com.
+This project builds upon:
 
-When you submit a pull request, a CLA bot will automatically determine whether you need to provide
-a CLA and decorate the PR appropriately (e.g., status check, comment). Simply follow the instructions
-provided by the bot. You will only need to do this once across all repos using our CLA.
+> **Huang et al. (2024)**  
+> *A High-Resolution Reanalysis Dataset of Air Pollutants over China.*  
 
-This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
-For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
-contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
+---
 
-## Trademarks
+## 📖 Overview
 
-This project may contain trademarks or logos for projects, products, or services. Authorized use of Microsoft
-trademarks or logos is subject to and must follow
-[Microsoft's Trademark & Brand Guidelines](https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks/usage/general).
-Use of Microsoft trademarks or logos in modified versions of this project must not cause confusion or imply Microsoft sponsorship.
-Any use of third-party trademarks or logos are subject to those third-party's policies.
+- 📂 Data format: NetCDF / `xarray.Dataset`
+- 🧠 Backbone: ClimaX (ViT-based climate foundation model)
+- 🌍 Spatial resolution: 0.1° x 0.1° (~10 km)
+- 🧪 Target variables: PM₂.₅, PM₁₀, NO₂, SO₂, O₃, CO, meteorological fields
+- 🛠️ Training: Fine-tuning on pollutant-specific prediction tasks
+
+Documentation will be expanded soon.
+
+---
+
+## 🚀 Usage
+
+Coming soon:
+- How to preprocess CAQRA
+- How to configure `caqra.yaml` for training
+- Custom dataloader for CAQRA
+- Training & evaluation scripts
+
+---
+
+## 🙏 Acknowledgements
+
+Special thanks to [Microsoft Research](https://github.com/microsoft/ClimaX) for releasing ClimaX, and to the open-source community advancing climate and weather AI research.
+
+---
+
+## 📄 License
+
+This project follows the original ClimaX [MIT License](https://github.com/microsoft/ClimaX/blob/main/LICENSE).  
+The name "Rossice" is used to identify this experimental fork.
+
+---
+
+## 💬 Contributions
+
+Contributions, bug reports, and ideas are welcome!  
+Please open an [issue](https://github.com/AmmarKheder/rossice/issues) or submit a [pull request](https://github.com/AmmarKheder/rossice/pulls).
+
+---
