@@ -5,7 +5,7 @@
 [![Documentation](https://img.shields.io/badge/docs-in%20progress-yellow)](#)
 [![Previous Work](https://img.shields.io/badge/arXiv-2502.11941-blue)](https://arxiv.org/abs/2502.11941)
 
-# Rossice: Fine-tuning ClimaX for High-Resolution Air Pollution Reanalysis
+# Rossice: "---------"
 
 **Rossice** is a customized fork of [ClimaX](https://arxiv.org/abs/2301.10343), designed to integrate and fine-tune foundation weather models on high-resolution air pollution reanalysis data from the [CAQRA](https://www.scidb.cn/en/detail?dataSetId=696756084735475712) dataset (China Air Quality Reanalysis).  
 This project aims to adapt ClimaX to pollution-specific variables such as **PM₂.₅**, **O₃**, **NO₂**, and more, using a spatial resolution of **0.1° (~10 km)**.
